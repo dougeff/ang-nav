@@ -2551,15 +2551,10 @@
             link: function (scope, element, attrs) {
                 element.bind('click', function (e) {
                     e.preventDefault();
-                    var $body = angular.element('body');
                     var inputId = '#' + attrs.focusInput;
                     $timeout(function(){
-                        if ($body.hasClass('search-open')) {
-                            e.preventDefault();
-                            angular.element(inputId).focus();
-                            console.log("clicked");
-                        }
-                    }, 0);
+                        angular.element(inputId).focus();
+                    }, 500);
                 });
             }
         };
